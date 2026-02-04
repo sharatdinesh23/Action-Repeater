@@ -1,0 +1,302 @@
+[
+  {
+    "action": "type",
+    "value": "w",
+    "delay": 0.779
+  },
+  {
+    "action": "type",
+    "value": "o",
+    "delay": 0.132
+  },
+  {
+    "action": "type",
+    "value": "r",
+    "delay": 0.161
+  },
+  {
+    "action": "type",
+    "value": "d",
+    "delay": 0.25
+  },
+  {
+    "action": "click",
+    "anchor": "C:\\Users\\sharath.dinesh\\Desktop\\Personal Code\\Context based Action repeater\\anchors\\anchor_4.png",
+    "delay": 4.453
+  },
+  {
+    "action": "click",
+    "anchor": "C:\\Users\\sharath.dinesh\\Desktop\\Personal Code\\Context based Action repeater\\anchors\\anchor_5.png",
+    "delay": 0.963
+  },
+  {
+    "action": "type",
+    "value": "s",
+    "delay": 0.128
+  },
+  {
+    "action": "type",
+    "value": "h",
+    "delay": 0.13
+  },
+  {
+    "action": "type",
+    "value": "a",
+    "delay": 0.088
+  },
+  {
+    "action": "type",
+    "value": "r",
+    "delay": 0.068
+  },
+  {
+    "action": "type",
+    "value": "a",
+    "delay": 0.082
+  },
+  {
+    "action": "type",
+    "value": "t",
+    "delay": 0.058
+  },
+  {
+    "action": "type",
+    "value": "h",
+    "delay": 0.114
+  },
+  {
+    "action": "type",
+    "value": "d",
+    "delay": 0.162
+  },
+  {
+    "action": "type",
+    "value": "i",
+    "delay": 0.149
+  },
+  {
+    "action": "type",
+    "value": "n",
+    "delay": 0.104
+  },
+  {
+    "action": "type",
+    "value": "d",
+    "delay": 0.66
+  },
+  {
+    "action": "type",
+    "value": "i",
+    "delay": 0.128
+  },
+  {
+    "action": "type",
+    "value": "n",
+    "delay": 0.082
+  },
+  {
+    "action": "type",
+    "value": "e",
+    "delay": 0.109
+  },
+  {
+    "action": "type",
+    "value": "s",
+    "delay": 0.105
+  },
+  {
+    "action": "type",
+    "value": "h",
+    "delay": 0.11
+  },
+  {
+    "action": "type",
+    "value": "9",
+    "delay": 1.256
+  },
+  {
+    "action": "type",
+    "value": "6",
+    "delay": 0.16
+  },
+  {
+    "action": "type",
+    "value": "9",
+    "delay": 0.158
+  },
+  {
+    "action": "type",
+    "value": "9",
+    "delay": 0.131
+  },
+  {
+    "action": "type",
+    "value": "7",
+    "delay": 0.213
+  },
+  {
+    "action": "type",
+    "value": "7",
+    "delay": 0.127
+  },
+  {
+    "action": "type",
+    "value": "8",
+    "delay": 0.245
+  },
+  {
+    "action": "type",
+    "value": "1",
+    "delay": 0.093
+  },
+  {
+    "action": "type",
+    "value": "8",
+    "delay": 0.095
+  },
+  {
+    "action": "type",
+    "value": "2",
+    "delay": 0.103
+  },
+  {
+    "action": "type",
+    "value": "A",
+    "delay": 1.498
+  },
+  {
+    "action": "type",
+    "value": "2",
+    "delay": 0.291
+  },
+  {
+    "action": "type",
+    "value": ",",
+    "delay": 0.256
+  },
+  {
+    "action": "type",
+    "value": "3",
+    "delay": 0.462
+  },
+  {
+    "action": "type",
+    "value": "0",
+    "delay": 0.12
+  },
+  {
+    "action": "type",
+    "value": "1",
+    "delay": 0.108
+  },
+  {
+    "action": "type",
+    "value": ",",
+    "delay": 0.174
+  },
+  {
+    "action": "type",
+    "value": "s",
+    "delay": 0.35
+  },
+  {
+    "action": "type",
+    "value": "a",
+    "delay": 0.109
+  },
+  {
+    "action": "type",
+    "value": "l",
+    "delay": 0.131
+  },
+  {
+    "action": "type",
+    "value": "i",
+    "delay": 0.169
+  },
+  {
+    "action": "type",
+    "value": "s",
+    "delay": 0.097
+  },
+  {
+    "action": "type",
+    "value": "b",
+    "delay": 0.134
+  },
+  {
+    "action": "type",
+    "value": "u",
+    "delay": 0.184
+  },
+  {
+    "action": "type",
+    "value": "r",
+    "delay": 0.175
+  },
+  {
+    "action": "type",
+    "value": "y",
+    "delay": 0.132
+  },
+  {
+    "action": "type",
+    "value": ",",
+    "delay": 0.584
+  },
+  {
+    "action": "type",
+    "value": "o",
+    "delay": 0.416
+  },
+  {
+    "action": "type",
+    "value": "m",
+    "delay": 0.495
+  },
+  {
+    "action": "type",
+    "value": "o",
+    "delay": 0.144
+  },
+  {
+    "action": "type",
+    "value": "h",
+    "delay": 0.19
+  },
+  {
+    "action": "type",
+    "value": "a",
+    "delay": 0.111
+  },
+  {
+    "action": "type",
+    "value": "n",
+    "delay": 0.112
+  },
+  {
+    "action": "click",
+    "anchor": "C:\\Users\\sharath.dinesh\\Desktop\\Personal Code\\Context based Action repeater\\anchors\\anchor_55.png",
+    "delay": 1.781
+  },
+  {
+    "action": "click",
+    "anchor": "C:\\Users\\sharath.dinesh\\Desktop\\Personal Code\\Context based Action repeater\\anchors\\anchor_56.png",
+    "delay": 0.656
+  },
+  {
+    "action": "click",
+    "anchor": "C:\\Users\\sharath.dinesh\\Desktop\\Personal Code\\Context based Action repeater\\anchors\\anchor_57.png",
+    "delay": 0.699
+  },
+  {
+    "action": "click",
+    "anchor": "C:\\Users\\sharath.dinesh\\Desktop\\Personal Code\\Context based Action repeater\\anchors\\anchor_58.png",
+    "delay": 1.135
+  },
+  {
+    "action": "click",
+    "anchor": "C:\\Users\\sharath.dinesh\\Desktop\\Personal Code\\Context based Action repeater\\anchors\\anchor_59.png",
+    "delay": 1.293
+  }
+]
