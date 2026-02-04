@@ -1,20 +1,33 @@
-import time
-import json
-import pyautogui
+import time, json, subprocess, pyautogui
 from pathlib import Path
 
-BASE_DIR = Path(__file__).parent
-WORKFLOW = BASE_DIR / "workflow.json"
+BASE = Path(__file__).parent
+WF = BASE / "workflow.json"
+
+from pynput.keyboard import Key
+import pyautogui
+
+pyautogui.FAILSAFE = False
+
+
+KEY_MAP = {
+    "Key.enter": "enter",
+    "Key.space": "space",
+    "Key.backspace": "backspace",
+    "Key.tab": "tab",
+    "Key.esc": "esc",
+    "Key.up": "up",
+    "Key.down": "down",
+    "Key.left": "left",
+    "Key.right": "right"
+}
+
 
 
 def find(anchor):
-    for conf in (0.8, 0.7, 0.6):
+    for c in (0.8, 0.7, 0.6):
         try:
-            loc = pyautogui.locateOnScreen(
-                anchor,
-                confidence=conf,
-                grayscale=True
-            )
+            loc = pyautogui.locateOnScreen(anchor, confidence=c, grayscale=True)
             if loc:
                 return loc
         except:
@@ -23,31 +36,36 @@ def find(anchor):
 
 
 def execute():
-    if not WORKFLOW.exists():
-        print("✗ workflow.json not found")
-        return
-
-    with open(WORKFLOW, encoding="utf-8") as f:
+    with open(WF) as f:
         steps = json.load(f)
 
     for step in steps:
         time.sleep(step.get("delay", 0))
 
-        if step["action"] == "click":
+        if step["action"] == "start_app":
+            subprocess.Popen(step["command"], shell=True)
+            time.sleep(2)
+
+        elif step["action"] == "click":
             loc = find(step["anchor"])
             if loc:
-                x = loc.left + loc.width // 2
-                y = loc.top + loc.height // 2
-                pyautogui.click(x, y)
-                print("✓ Click")
+                pyautogui.click(
+                    loc.left + loc.width // 2,
+                    loc.top + loc.height // 2
+                )
             else:
-                print("⚠ Element not found, skipped")
+                print("⚠ click skipped")
+
+        elif step["action"] == "key":
+            key_name = KEY_MAP.get(step["key"])
+            if key_name:
+                pyautogui.press(key_name)
+
 
         elif step["action"] == "type":
             pyautogui.write(step["value"])
-            print(f"✓ Typed {step['value']}")
 
-    print("✓ Execution complete")
+    print("✓ Execution finished")
 
 
 if __name__ == "__main__":

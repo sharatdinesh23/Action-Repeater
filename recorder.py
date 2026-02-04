@@ -1,29 +1,27 @@
-import time
-import json
-import pyautogui
+import time, json, pyautogui
 from pynput import mouse, keyboard
 from pathlib import Path
 
-BASE_DIR = Path(__file__).parent
-ANCHOR_DIR = BASE_DIR / "anchors"
-ANCHOR_DIR.mkdir(exist_ok=True)
+BASE = Path(__file__).parent
+ANCHORS = BASE / "anchors"
+ANCHORS.mkdir(exist_ok=True)
 
 actions = []
-last_time = time.time()
+last = time.time()
 recording = True
 
 
 def dt():
-    global last_time
+    global last
     now = time.time()
-    d = round(now - last_time, 3)
-    last_time = now
+    d = round(now - last, 3)
+    last = now
     return d
 
 
-def capture_anchor(x, y):
+def capture(x, y):
     img = pyautogui.screenshot(region=(x - 80, y - 80, 160, 160))
-    path = ANCHOR_DIR / f"anchor_{len(actions)}.png"
+    path = ANCHORS / f"anchor_{len(actions)}.png"
     img.save(path)
     return str(path)
 
@@ -32,29 +30,34 @@ def on_click(x, y, button, pressed):
     if not recording or not pressed:
         return
 
-    anchor = capture_anchor(x, y)
-
     actions.append({
         "action": "click",
-        "anchor": anchor,
+        "anchor": capture(x, y),
         "delay": dt()
     })
 
+
+from pynput.keyboard import Key
 
 def on_press(key):
     if not recording:
         return
 
-    try:
-        value = key.char
-    except:
-        return
+    delay = dt()
 
-    actions.append({
-        "action": "type",
-        "value": value,
-        "delay": dt()
-    })
+    if isinstance(key, Key):
+        actions.append({
+            "action": "key",
+            "key": str(key),   # e.g. Key.enter
+            "delay": delay
+        })
+    else:
+        actions.append({
+            "action": "type",
+            "value": key.char,
+            "delay": delay
+        })
+
 
 
 def on_release(key):
@@ -65,18 +68,14 @@ def on_release(key):
 
 
 print("● Recording started (ESC to stop)")
+ml = mouse.Listener(on_click=on_click)
+kl = keyboard.Listener(on_press=on_press, on_release=on_release)
+ml.start()
+kl.start()
+kl.join()
+ml.stop()
 
-mouse_listener = mouse.Listener(on_click=on_click)
-keyboard_listener = keyboard.Listener(on_press=on_press, on_release=on_release)
-
-mouse_listener.start()
-keyboard_listener.start()
-
-keyboard_listener.join()
-mouse_listener.stop()
-
-workflow = BASE_DIR / "workflow.json"
-with open(workflow, "w", encoding="utf-8") as f:
+with open(BASE / "workflow.json", "w") as f:
     json.dump(actions, f, indent=2)
 
-print(f"✓ Workflow saved → {workflow}")
+print("✓ workflow.json saved")
